@@ -8,11 +8,10 @@
 <h1 th:text="${title}"></h1>
 <nav th:replace="fragments :: navigation"></nav>
 <form method="post">
-    <label for="name">Name of Cheese: </label>
-    <input type="text" id="name" name="cheeseName" />
-    <label for="description">Description: </label>
-    <input type="text" id="description" name="cheeseDescription" />
-    <input type="submit" value="Add Cheese" />
+    <select name="cheese">
+        <option th:each="cheese : ${cheeses}" th:value="${cheese.key}" th:text="${cheese.key}"></option>
+    </select>
+    <input type="submit" value="Remove Cheese" />
 </form>
 </body>
 </html>
